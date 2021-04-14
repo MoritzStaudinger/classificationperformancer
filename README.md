@@ -2,7 +2,7 @@
 
 ## Description
 
-This Project aims to compare the implementations of k-nearest Neighbors and the random forest classifier based on two publicly available datasets. 
+This Project aims to compare the implementations of k-nearest Neighbors and the random forest classifier based on two publicly available datasets.  We will evaluate both datasets with different variations of k-nearest Neighbor (Euclidean and Manhattan distance as well as distance and uniform weighting) and various numbers of neighbors. For the random forest algorithm we will vary the number of trees from 1 to 2500.
 
 ## Datasets
 
@@ -59,13 +59,19 @@ To Run the Project, it is necessary to follow the following instructions
    zoo_kNN.csv
    ```
 
-5. If this files exist you can execute the following line, to generate visualizations of the run tests:
+5. If these files exist you can execute the following line, to generate visualizations of the run tests:
 
    ```
    python3 HarryPlotter.py
    ```
 
    This should create plots in the "evaluation/" folder to allow comparison of the different types of KNN and Random Forest.
+   
+6. The results can vary, as the data is split randomly before running the experiment, this should not lead to any problems, but we also provided  our test and trainingsdata splits, which can be used.
 
+## Contributing
+Pull requests are welcome. For major changes, please contact the [authors](mail:moritz.staudinger@tuwien.ac.at)
 
+## License
 
+[MIT](https://choosealicense.com/licenses/mit/)
