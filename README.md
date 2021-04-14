@@ -12,9 +12,15 @@ Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ic
 Available at: https://www.openml.org/d/62 (Accessed on 14 April 2021)
 Download Directlink: https://www.openml.org/data/get_csv/52352/openml_phpZNNasq
 
-The zoo dataset contains 100 rows of different animals species, which can be categorized in 7 different types. The types are distributed in the following way:
+The zoo dataset contains 101 rows of different animals species, which can be categorized in 7 different types. The types are distributed in the following way:
 
-<img src="C:\Users\Moritz\Documents\TU\2021SS\DS\ClassificationPerformancer\readme\HistAnimals.png" alt="HistAnimals" style="zoom:15%;" />
+mammal: 41
+fish: 13
+bird: 20
+invertebrate: 10
+insect: 8
+amphibian: 4
+reptile: 5
 
 As this is a small dataset we need to be aware that overfitting can happen, therefore we need to test with enough trainingsdata, so that we can still produce reliable results. For detailed information please look at  https://www.openml.org/d/62.
 
