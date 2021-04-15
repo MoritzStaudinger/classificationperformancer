@@ -28,10 +28,10 @@ def split_into():
     traindf.to_csv(learn, sep=",", encoding="utf-8", header=True, index=False)
     testdf.to_csv(test, sep=",", encoding="utf-8", header=True, index=False)
 
-#uncomment to generate new training and test file from complete file
-split_into() 
+#uncomment to generate new training and test file from complete file 
 
 
+def extract_data():
 '''
 
 EXTRACT LEARNING DATA
@@ -188,7 +188,6 @@ def save_knn_csv():
                         precision, recall, fbeta, _ = print_report(pred)
                         print(f"{w},{dM},{alg},{n},{diff},{precision},{recall},{fbeta}", file=f)
 
-save_knn_csv()
 
 
 def save_forest_csv():
@@ -201,5 +200,8 @@ def save_forest_csv():
             precision, recall, fbeta, _ = print_report(pred)
             print(f"{t},{diff},{precision},{recall},{fbeta}", file=f)
 
-save_forest_csv()
 
+
+if __name__ == "__main__":
+    save_knn_csv()
+    save_forest_csv()

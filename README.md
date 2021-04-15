@@ -68,7 +68,7 @@ To Run the Project, it is necessary to follow the following instructions
 5. If these files exist you can execute the following line, to generate visualizations of the run tests:
 
    ```
-   python3 HarryPlotter.py
+   python3 Plotter.py
    ```
 
    This should create plots in the "evaluation/" folder to allow comparison of the different types of KNN and Random Forest.
