@@ -33,7 +33,7 @@ def get_path_of_set_for(dataset, typ):
 # Function to get the path to save the plot for a specific dataset and type
 def get_path_to_save_plot_for(dataset, typ, specific=""):
     specific = f"_{specific}" if len(specific) else ""
-    return f"{FOLDER_PLOTS}/{typ}_{dataset}{specific}.png"
+    return f"{FOLDER_PLOTS}/{dataset}_{typ}{specific}.png"
 
 # Function to save figure as plot
 def save_figure_as(plot, path, dpi=600, margin=0.23):
@@ -69,8 +69,7 @@ def plot_forest(relative=False):
         plt.xlabel("number of trees")
         plt.xticks(rotation=90)
 
-        rel = "relative" if relative else ""
-        save_figure_as(plt, get_path_to_save_plot_for(DS, TYPE_FOREST, rel))
+        save_figure_as(plt, get_path_to_save_plot_for(DS, TYPE_FOREST))
         
         df= neigh_str(df)
         
@@ -130,13 +129,12 @@ def plot_kNN(relative=False):
                             best_legend[0 if weight == "distance" else 1] = legend[-1]
 
             plt.legend(legend, fontsize="medium")
-            plt.ylabel("Accuracy" if relative else "absolute difference")
+            plt.ylabel("Accuracy")
             plt.xlabel("Number of neighbors")
             plt.suptitle(f"[{DS}] Evaluation of kNN", fontsize=16)
             plt.title("weight/distanceMetric/algorithm", fontsize=12)
 
-            rel = "_relative" if relative else ""
-            save_figure_as(plt, get_path_to_save_plot_for(DS, TYPE_KNN, f"{weight}{dM}{rel}"))
+            save_figure_as(plt, get_path_to_save_plot_for(DS, TYPE_KNN, f"{weight}_{dM}"))
             legend = []
             n = 0
             
@@ -146,13 +144,12 @@ def plot_kNN(relative=False):
         plt.plot('Neighbours', 'Difference', data=best_performers["distance"], color=COLORS[1],ls=['-','--','-.',':'][1%4], linewidth=2, alpha=0.7)
         plt.plot('Neighbours', 'Difference', data=best_performers["uniform"], color=COLORS[2],ls=['-','--','-.',':'][2%4], linewidth=2, alpha=0.7)
         plt.legend(best_legend, fontsize="medium")
-        plt.ylabel("Accuracy" if relative else "absolute difference")
+        plt.ylabel("Accuracy")
         plt.xlabel("Number of neighbors")
         plt.suptitle(f"[{DS}] kNN best uniform vs best distance", fontsize=16)
         plt.title("weight/distanceMetric/algorithm", fontsize=12)
 
-        rel = "_relative" if relative else ""
-        save_figure_as(plt, get_path_to_save_plot_for(DS, TYPE_KNN, f"best_{rel}"))
+        save_figure_as(plt, get_path_to_save_plot_for(DS, TYPE_KNN, "best_accuracy"))
 
 
 

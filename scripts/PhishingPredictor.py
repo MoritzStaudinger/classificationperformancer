@@ -22,7 +22,7 @@ def split_into():
     from sklearn.model_selection import train_test_split
 
     df = get_dataframe_from_file(complete)
-    traindf, testdf = train_test_split(df, test_size=0.3)
+    traindf, testdf = train_test_split(df, test_size=0.3, random_state=11777768)
 
     traindf.to_csv(learn, sep=",", encoding="utf-8", header=True, index=False)
     testdf.to_csv(test, sep=",", encoding="utf-8", header=True, index=False)

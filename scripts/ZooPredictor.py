@@ -23,15 +23,15 @@ def split_into():
     from sklearn.model_selection import train_test_split
 
     df = get_dataframe_from_file(complete)
-    traindf, testdf = train_test_split(df, test_size=0.3)
+    traindf, testdf = train_test_split(df, test_size=0.3, random_state=117777777)
 
     traindf.to_csv(learn, sep=",", encoding="utf-8", header=True, index=False)
     testdf.to_csv(test, sep=",", encoding="utf-8", header=True, index=False)
 
 #uncomment to generate new training and test file from complete file 
 
+split_into()
 
-def extract_data():
 '''
 
 EXTRACT LEARNING DATA
@@ -201,7 +201,5 @@ def save_forest_csv():
             print(f"{t},{diff},{precision},{recall},{fbeta}", file=f)
 
 
-
-if __name__ == "__main__":
-    save_knn_csv()
-    save_forest_csv()
+save_knn_csv()
+save_forest_csv()
