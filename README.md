@@ -73,7 +73,9 @@ To Run the Project, it is necessary to follow the following instructions
 
    This should create plots in the "evaluation/" folder to allow comparison of the different types of KNN and Random Forest.
    
-6. The results can vary, as the data is split randomly before running the experiment, this should not lead to any problems, but we also provided  our test and trainingsdata splits, which can be used.
+   
+   
+   The results can vary, as the random_forest splits are done randomly, and therefore maybe the changes differ a bit from the presented results, but should follow the same trend.
 
 ## Contributing
 Pull requests are welcome. For major changes, please contact the [authors](mail:moritz.staudinger@tuwien.ac.at)
